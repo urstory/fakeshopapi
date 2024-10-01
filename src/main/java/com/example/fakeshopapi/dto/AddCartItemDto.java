@@ -1,6 +1,5 @@
 package com.example.fakeshopapi.dto;
 
-import com.example.fakeshopapi.domain.Cart;
 import lombok.Data;
 
 @Data

@@ -1,18 +1,10 @@
 package com.example.fakeshopapi.security.jwt.filter;
 
 
-import com.example.fakeshopapi.security.jwt.exception.JwtExceptionCode;
-import com.example.fakeshopapi.security.jwt.provider.JwtAuthenticationProvider;
-import com.example.fakeshopapi.security.jwt.token.JwtAuthenticationToken;
-import com.example.fakeshopapi.security.jwt.util.JwtTokenizer;
-import com.example.fakeshopapi.security.jwt.util.LoginInfoDto;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.UnsupportedJwtException;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.authentication.AuthenticationManager;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,11 +12,21 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import com.example.fakeshopapi.security.jwt.exception.JwtExceptionCode;
+import com.example.fakeshopapi.security.jwt.token.JwtAuthenticationToken;
+import com.example.fakeshopapi.security.jwt.util.JwtTokenizer;
+import com.example.fakeshopapi.security.jwt.util.LoginInfoDto;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
 @Slf4j

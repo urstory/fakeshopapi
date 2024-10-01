@@ -1,13 +1,14 @@
 package com.example.fakeshopapi.service;
 
-import com.example.fakeshopapi.domain.RefreshToken;
-import com.example.fakeshopapi.repository.RefreshTokenRepository;
-import lombok.RequiredArgsConstructor;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.text.html.Option;
-import java.util.Optional;
+import com.example.fakeshopapi.domain.RefreshToken;
+import com.example.fakeshopapi.repository.RefreshTokenRepository;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
